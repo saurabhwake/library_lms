@@ -10,6 +10,11 @@ CORS(app)  # Enable CORS for frontend-backend communication
 client = MongoClient("mongodb://localhost:27017/")  # Replace with your MongoDB URI
 db = client["library_db"]  # Database name
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"message": "App is running successfully"}), 200
+
+
 # Register endpoint
 @app.route("/register", methods=["POST"])
 def register():
