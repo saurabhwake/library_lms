@@ -16,7 +16,7 @@ const Register = () => {
     setError(''); // Clear any previous errors
 
     try {
-      const response = await fetch('http://localhost:5000/register', {
+      const response = await fetch('https://library-lms.onrender.com/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
