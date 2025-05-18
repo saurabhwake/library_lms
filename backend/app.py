@@ -7,8 +7,8 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend-backend communication
 
 # MongoDB connection
-client = MongoClient("mongodb://localhost:27017/")  # Replace with your MongoDB URI
-db = client["library_db"]  # Database name
+client = MongoClient("mongodb+srv://saurabhwake80:saurabhwake80@cluster0.gciyyal.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+db = client["library_db"]
 
 @app.route("/", methods=["GET"])
 def home():
