@@ -22,7 +22,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://localhost:5000/users');
+        const response = await fetch('https://library-lms.onrender.com/users');
         if (!response.ok) {
           throw new Error('Failed to fetch users');
         }
@@ -60,7 +60,7 @@ const AdminDashboard = () => {
   // Handle user deletion (block)
   const handleDeleteUser = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:5000/users/${userId}`, {
+      const response = await fetch(`https://library-lms.onrender.com/users/${userId}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
@@ -105,7 +105,7 @@ const AdminDashboard = () => {
         formData.append('profilePhoto', profilePhoto);
       }
 
-      const response = await fetch(`http://localhost:5000/users/${editedUser._id}`, {
+      const response = await fetch(`https://library-lms.onrender.com/users/${editedUser._id}`, {
         method: 'PUT',
         body: formData,
       });
@@ -126,7 +126,7 @@ const AdminDashboard = () => {
   // Handle adding a new book
   const handleAddBook = async () => {
     try {
-      const response = await fetch('http://localhost:5000/books', {
+      const response = await fetch('https://library-lms.onrender.com/books', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
