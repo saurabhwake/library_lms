@@ -13,7 +13,7 @@ const UserManagement = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://localhost:5000/users'); // Endpoint to fetch users
+        const response = await fetch('https://library-lms.onrender.com/users'); // Endpoint to fetch users
         if (!response.ok) {
           throw new Error('Failed to fetch users');
         }
@@ -32,7 +32,7 @@ const UserManagement = () => {
   // Handle user deletion
   const handleDeleteUser = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:5000/users/${userId}`, {
+      const response = await fetch(`https://library-lms.onrender.com/users/${userId}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
@@ -49,7 +49,7 @@ const UserManagement = () => {
   // Handle user editing
   const handleEditUser = async (userId, updatedData) => {
     try {
-      const response = await fetch(`http://localhost:5000/users/${userId}`, {
+      const response = await fetch(`https://library-lms.onrender.com/users/${userId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
